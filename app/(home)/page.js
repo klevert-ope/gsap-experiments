@@ -14,7 +14,7 @@ export default function Home() {
             GSAP EXPERIMENT
           </h1>
           <section>
-            <h2 className=" mt-5 text-orange-500">
+            <h2 data-lag="0.3" className=" mt-5 text-orange-500">
               The Technological Renaissance
             </h2>
             <p data-lag="0.3">
@@ -35,7 +35,7 @@ export default function Home() {
           </section>
           <section className=" bg-orange-400"></section>
           <section>
-            <p data-lag="0.3" data-speed="0.8">
+            <p data-lag="0.1">
               In the world of transportation, flying cars had transitioned from
               science fiction to reality. Cities had sprawling networks of
               automated aerial taxis, eliminating traffic congestion and
@@ -43,7 +43,7 @@ export default function Home() {
               vehicles had become the norm, making accidents a rarity. The
               streets were quieter, and the air was cleaner.
             </p>
-            <p data-lag="0.5">
+            <p data-lag="0.2">
               Education had transformed as well. Traditional classrooms were a
               thing of the past. Students now entered virtual reality
               environments where they could explore history, travel to different

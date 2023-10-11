@@ -17,6 +17,7 @@ body::-webkit-scrollbar {
 
 section {
   height: 100svh;
+  padding: 20px;
 }
 h2 {
   font-size: x-large;
