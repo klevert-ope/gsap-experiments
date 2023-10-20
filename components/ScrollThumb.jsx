@@ -13,7 +13,7 @@ const ScrollThumb = () => {
 
   return (
     <div style={thumbStyle}>
-      <div className="z-50 h-16 w-2 rounded-lg bg-red-600" />
+      <div className="z-50 mt-1 h-16 w-2 rounded-lg bg-red-600" />
     </div>
   );
 };
