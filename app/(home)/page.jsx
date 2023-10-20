@@ -14,16 +14,16 @@ export default function Home() {
             GSAP EXPERIMENT
           </h1>
           <section>
-            <h2 data-lag="0.3" className=" mt-5 text-orange-500">
+            <h2 data-lag="0.1" className=" mt-5 text-orange-500">
               The Technological Renaissance
             </h2>
-            <p data-lag="0.3">
+            <p data-lag="0.2">
               In the not-so-distant future, technology had evolved beyond what
               anyone had ever imagined. It was a time of unprecedented
               innovation and progress, a period often referred to as the
               Technological Renaissance.
             </p>
-            <p data-lag="0.5">
+            <p data-lag="0.2">
               One of the most remarkable advancements was in the field of
               healthcare. Medical nanobots had become commonplace, coursing
               through our veins, detecting and repairing any issues before they
