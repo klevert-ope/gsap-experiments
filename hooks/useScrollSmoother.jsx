@@ -1,12 +1,12 @@
 import { useLayoutEffect } from "react";
-import gsap from "gsap";
+import gsap from "gsap/dist/gsap";
 import ScrollSmoother from "gsap/dist/ScrollSmoother.js";
 import ScrollTrigger from "gsap/dist/ScrollTrigger.js";
 
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-
 export function useScrollSmoother() {
   useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
+
     const initializeScrollSmoother = async () => {
       gsap.config({
         auth: process.env.gsap_authToken,
