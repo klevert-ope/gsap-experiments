@@ -1,0 +1,81 @@
+@import "normalize.css/normalize.css";
+
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+section {
+  height: 100vh;
+  padding: 20px;
+}
+h2 {
+  font-size: x-large;
+  font-weight: 600;
+}
+p {
+  font-size: medium;
+  font-weight: 400;
+  padding-bottom: 4rem;
+}
+.layout {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+
+[style*="--aspect-ratio"] > img {
+  height: auto;
+}
+
+[style*="--aspect-ratio"] {
+  position: relative;
+}
+
+[style*="--aspect-ratio"] > :first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+[style*="--aspect-ratio"]::before {
+  content: "";
+  display: block;
+}
+
+@supports not (aspect-ratio: 1/1) {
+  [style*="--aspect-ratio"]::before {
+    height: 0;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }
+}
+@supports (aspect-ratio: 1/1) {
+  [style*="--aspect-ratio"]::before {
+    aspect-ratio: calc(var(--aspect-ratio));
+  }
+}
+
+@media (max-width: 600px) {
+  #Laptop {
+    display: none;
+  }
+}
+@media (min-width: 601px) {
+  #Mobile {
+    display: none;
+  }
+}
