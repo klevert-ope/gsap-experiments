@@ -2,7 +2,7 @@ const S1 = () => {
   return (
     <>
       <section>
-        <p data-lag="clamp(0.2)" className="layout">
+        <p data-lag="0.2" className="layout">
           In the world of transportation, flying cars had transitioned from
           science fiction to reality. Cities had sprawling networks of automated
           aerial taxis, eliminating traffic congestion and significantly
@@ -10,7 +10,7 @@ const S1 = () => {
           norm, making accidents a rarity. The streets were quieter, and the air
           was cleaner.
         </p>
-        <p data-lag="clamp(0.4)" className="layout">
+        <p data-lag="0.4" className="layout">
           Education had transformed as well. Traditional classrooms were a thing
           of the past. Students now entered virtual reality environments where
           they could explore history, travel to different eras, and interact
