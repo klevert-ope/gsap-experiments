@@ -9,6 +9,7 @@
 body {
   scrollbar-width: none;
   -ms-overflow-style: none;
+  background-color: brown;
 }
 
 body::-webkit-scrollbar {
@@ -16,66 +17,43 @@ body::-webkit-scrollbar {
 }
 
 section {
-  height: 100vh;
-  padding: 20px;
+  min-height: 100svh;
+}
+h1 {
+  font-size: clamp(1.6rem, 30svw, 2.2rem);
+  font-weight: 600;
+  padding: 2rem 1rem 1rem 1rem;
 }
 h2 {
-  font-size: x-large;
+  font-size: clamp(0.7rem, 30svw, 1.5rem);
   font-weight: 600;
+  padding: 2rem 1rem 1rem 1rem;
 }
 p {
-  font-size: medium;
+  font-size: clamp(0.6rem, 30svw, 1rem);
   font-weight: 400;
-  padding-bottom: 4rem;
+  padding: 2rem 1rem 1rem 1rem;
 }
 .layout {
   max-width: 1200px;
   margin-inline: auto;
 }
 
-[style*="--aspect-ratio"] > :first-child {
-  width: 100%;
-}
-
-[style*="--aspect-ratio"] > img {
-  height: auto;
-}
-
-[style*="--aspect-ratio"] {
-  position: relative;
-}
-
-[style*="--aspect-ratio"] > :first-child {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-}
-
-[style*="--aspect-ratio"]::before {
-  content: "";
-  display: block;
-}
-
-@supports not (aspect-ratio: 1/1) {
-  [style*="--aspect-ratio"]::before {
-    height: 0;
-    padding-bottom: calc(100% / (var(--aspect-ratio)));
-  }
-}
-@supports (aspect-ratio: 1/1) {
-  [style*="--aspect-ratio"]::before {
-    aspect-ratio: calc(var(--aspect-ratio));
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   #Laptop {
     display: none;
   }
+  #video-loader,
+  #Mobile {
+    aspect-ratio: 300 / 533;
+  }
 }
-@media (min-width: 601px) {
+@media (min-width: 481px) {
   #Mobile {
     display: none;
+  }
+  #video-loader,
+  #Laptop {
+    aspect-ratio: 25 / 12;
   }
 }

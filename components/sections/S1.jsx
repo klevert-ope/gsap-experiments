@@ -1,8 +1,12 @@
+import { VideoLaptop, VideoMobile } from "@/components/VideoIntro";
+
 const S1 = () => {
   return (
     <>
-      <section className=" bg-orange-400">
-        <h1 className=" text-center text-5xl font-bold text-black">
+      <section className=" z-50 ">
+        <VideoLaptop />
+        <VideoMobile />
+        <h1 className=" pt-5 text-center font-bold text-black">
           GSAP EXPERIMENT
         </h1>
         <h2 data-lag="0.1" className=" layout pt-5 text-orange-500">

@@ -8,10 +8,6 @@ export function useScrollSmoother() {
     gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 
     const initializeScrollSmoother = async () => {
-      gsap.config({
-        auth: process.env.gsap_authToken,
-      });
-
       const gsapContext = gsap.context(() => {
         ScrollTrigger.normalizeScroll(true);
 

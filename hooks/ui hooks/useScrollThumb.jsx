@@ -1,6 +1,6 @@
 import { useState, useLayoutEffect, useRef } from "react";
 
-const useScrollThumb = () => {
+export const useScrollThumb = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
   const [showThumb, setShowThumb] = useState(false);
   const hideTimeoutRef = useRef(null);
@@ -33,5 +33,3 @@ const useScrollThumb = () => {
 
   return { scrollPercentage, showThumb };
 };
-
-export default useScrollThumb;

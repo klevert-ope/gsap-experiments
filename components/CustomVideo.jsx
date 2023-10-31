@@ -1,43 +1,35 @@
-import { AspectRatio } from "react-aspect-ratio";
-import VideoFetcher from "@/api/VideoFetcher";
-import useVideoPlayer from "@/hooks/useVideoPlayer";
-import ContentLoader from "react-content-loader";
+import { useVideoPlayer } from "@/hooks/video hooks/useVideoPlayer";
+import { useVideoFetcher } from "@/hooks/video hooks/useVideoFetcher";
+import VideoLoader from "@/components/ui/VideoLoader";
 
-function CustomVideo({ videoSrc, aspectRatio }) {
-  const { videoSource } = VideoFetcher(videoSrc);
+function CustomVideo({ videoSrc, height, width }) {
+  const { videoSource, isLoading, isError } = useVideoFetcher(videoSrc);
   const { videoRef } = useVideoPlayer(videoSource);
 
-  const VideoLoader = () => (
-    <ContentLoader
-      speed={2}
-      width="100%"
-      height="100%"
-      backgroundColor="#f3f3f3"
-      foregroundColor="#ecebeb"
-    >
-      <rect x="0" y="0" rx="0" ry="0" width="100%" height="100%" />
-    </ContentLoader>
-  );
+  if (isError) {
+    return <div>Error loading video</div>;
+  }
 
   return (
-    <div>
-      <AspectRatio ratio={aspectRatio}>
-        {videoSource ? (
+    <>
+      <div>
+        {isLoading ? (
+          <VideoLoader />
+        ) : videoSource ? (
           <video
             ref={videoRef}
+            width={width}
+            height={height}
             autoPlay
             loop
             muted
-            playsInline
-            className="h-full w-full object-cover"
+            className="w-full object-contain"
           >
             <source src={videoSource} type="application/x-mpegURL" />
           </video>
-        ) : (
-          <VideoLoader />
-        )}
-      </AspectRatio>
-    </div>
+        ) : null}
+      </div>
+    </>
   );
 }
 
