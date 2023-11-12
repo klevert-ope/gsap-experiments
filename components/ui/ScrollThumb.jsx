@@ -1,23 +1,24 @@
-import { useScrollThumb } from "@/hooks/ui hooks/useScrollThumb";
+import { useScrollThumb } from "@/hooks/Ui/useScrollThumb";
+import { useMemo } from "react";
 
-const ScrollThumb = () => {
-  const { scrollPercentage, showThumb } = useScrollThumb();
+function ScrollThumb() {
+  const { scrollPercentage, showThumb, thumbRef } = useScrollThumb();
 
-  const thumbStyle = {
-    position: "fixed",
-    right: "4px", // Adjust as needed
-    top: `${scrollPercentage}%`,
-    opacity: showThumb ? 1 : 0,
-    transition: "opacity 0.5s",
-  };
+  return useMemo(() => {
+    const thumbStyle = {
+      position: "fixed",
+      right: "4px",
+      top: `${scrollPercentage}%`,
+      opacity: showThumb ? 1 : 0,
+      transition: "opacity 0.5s",
+    };
 
-  return (
-    <>
-      <div style={thumbStyle}>
-        <div className="z-50 mt-1 h-16 rounded-lg bg-red-600 max-md:w-1.5 md:w-2" />
+    return (
+      <div style={thumbStyle} ref={thumbRef}>
+        <div className="z-50 my-1 h-16 w-1.5 rounded-lg bg-amber-300" />
       </div>
-    </>
-  );
-};
+    );
+  }, [scrollPercentage, showThumb, thumbRef]);
+}
 
 export default ScrollThumb;

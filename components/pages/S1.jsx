@@ -1,4 +1,4 @@
-import { VideoLaptop, VideoMobile } from "@/components/VideoIntro";
+import { VideoLaptop, VideoMobile } from "@/components/video/VideoIntro";
 
 const S1 = () => {
   return (
@@ -6,6 +6,7 @@ const S1 = () => {
       <section className=" z-50 ">
         <VideoLaptop />
         <VideoMobile />
+
         <h1 className=" pt-5 text-center font-bold text-black">
           GSAP EXPERIMENT
         </h1>

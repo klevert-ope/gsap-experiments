@@ -1,10 +1,10 @@
 "use client";
 
 import { QueryClient, QueryClientProvider } from "react-query";
-import { useScrollSmoother } from "@/hooks/ui hooks/useScrollSmoother";
+import { useScrollSmoother } from "@/hooks/ui/useScrollSmoother";
 import ScrollThumb from "@/components/ui/ScrollThumb";
-import S1 from "@/components/sections/S1";
-import S2 from "@/components/sections/S2";
+import S1 from "@/components/pages/S1";
+import S2 from "@/components/pages/S2";
 
 const queryClient = new QueryClient();
 export default function Home() {

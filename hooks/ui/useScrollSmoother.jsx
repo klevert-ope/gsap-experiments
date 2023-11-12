@@ -1,15 +1,16 @@
+import gsap from "gsap";
+import ScrollSmoother from "gsap/ScrollSmoother";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { useLayoutEffect } from "react";
-import gsap from "gsap/dist/gsap";
-import ScrollSmoother from "gsap/dist/ScrollSmoother.js";
-import ScrollTrigger from "gsap/dist/ScrollTrigger.js";
 
 export function useScrollSmoother() {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 
-    const initializeScrollSmoother = async () => {
+    const initializeScrollSmoother = () => {
       const gsapContext = gsap.context(() => {
         ScrollTrigger.normalizeScroll(true);
+        ScrollTrigger.config({ ignoreMobileResize: true });
 
         const scrollSmoother = ScrollSmoother.create({
           wrapper: "#smooth-wrapper",
@@ -17,6 +18,7 @@ export function useScrollSmoother() {
           smooth: 2,
           effects: true,
           smoothTouch: 0.1,
+          ignoreMobileResize: true,
         });
 
         return () => {
